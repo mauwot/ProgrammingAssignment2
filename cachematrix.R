@@ -29,12 +29,12 @@ cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
   
   m <- x$getsolve()
-  ## check if already inversed if so return m and stop
+  ## check if already inversed, if so return m
   if(!is.null(m)) {
     message("getting cached data")
     return(m)
   }
-  ## if not than do the inverse matrix computation
+  ## if not then do the inverse matrix computation
   data <- x$get()
   m <- solve(data, ...)
   x$setsolve(m)
